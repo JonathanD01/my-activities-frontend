@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    #image: sofocused/my-activities-frontend:1.0.0
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+      - "80:80"
+
+  backend-service:
+    image: sofocused/my-activities-api:1.0.0
+    restart: unless-stopped
+    depends_on:
+      - my-activities-database
+    environment:
+      - SPRING_FLYWAY_URL=jdbc:postgresql://my-activities-database/testdb-1
+      - SPRING_FLYWAY_PASSWORD=admin
+      - SPRING_FLYWAY_USER=admin
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://my-activities-database/testdb-1
+      - SPRING_JPA_SHOW-SQL=false
+      - CORS_ALLOWED-ORIGINS=http://frontend:3000
+      - SPRING_MAIL_HOST=my-activities-mailhog
+      - SPRING_MAIL_PORT=1025
+      - MAILING_FRONTEND_ACTIVIATION_URL=http://frontend/aktiver-bruker
+    ports:
+      - "8080:8080"
+
+  my-activities-database:
+    image: postgres:alpine
+    restart: unless-stopped
+    volumes:
+      - C:\postgres_container_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=testdb-1
+    ports:
+      - "1111:5432"
+
+  my-activities-mailhog:
+    image: mailhog/mailhog
+    restart: unless-stopped
+    ports:
+      - "1025:1025"
+      - "8025:8025"
