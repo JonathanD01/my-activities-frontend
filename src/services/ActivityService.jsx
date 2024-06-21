@@ -20,7 +20,6 @@ export async function getActivities(page, size) {
     method: "get",
     url: API_URL + `?page=${page}&size=${size}`,
     headers: { Authorization: `Bearer ${token}` },
-    data: {},
   });
 }
 
@@ -33,9 +32,9 @@ export async function updateActivity(id, body) {
 
   return axios({
     method: "patch",
-    url: API_URL,
+    url: API_URL + `/${id}`,
     headers: { Authorization: `Bearer ${token}` },
-    data: { id, ...body },
+    data: body,
   });
 }
 
@@ -63,8 +62,7 @@ export async function deleteActivity(id) {
 
   return axios({
     method: "delete",
-    url: API_URL + `?id=${id}`,
+    url: API_URL + `/${id}`,
     headers: { Authorization: `Bearer ${token}` },
-    data: {},
   });
 }

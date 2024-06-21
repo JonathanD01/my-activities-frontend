@@ -1,7 +1,7 @@
 {
   "name": "my-activities-frontend",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,6 +13,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@million/lint": "^1.0.0-rc.26",
     "@plq/use-persisted-state": "^1.2.0",
     "axios": "^1.7.2",
     "react": "^18.2.0",
