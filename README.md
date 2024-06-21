@@ -4,7 +4,7 @@
 
 This repository contains a React frontend application that displays your upcoming activities fetched from a backend Spring Boot application.
 
-View the site at ...
+View the site at [https://myactivitiesapp.azurewebsites.net/](https://myactivitiesapp.azurewebsites.net/)
 
 View the backend at [https://github.com/JonathanD01/my-activities-api](https://github.com/JonathanD01/my-activities-api)
 
@@ -23,7 +23,7 @@ View the backend at [https://github.com/JonathanD01/my-activities-api](https://g
 3. Build project with `docker-compose up --build` & access page on `http://localhost`
 
 ### Emails
-Emails can be accessed at `http://localhost:8025/`
+Emails can be accessed at `http://localhost:8025/` (with docker)
 
 ## Requirements
 - Node.js
