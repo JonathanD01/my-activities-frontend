@@ -3,13 +3,13 @@ version: '3.8'
 services:
 
   frontend:
-    image: sofocused/my-activities-frontend:1.0.1
+    image: sofocused/my-activities-frontend:1.0.2
     restart: unless-stopped
     ports:
       - "80:80"
 
   backend-service:
-    image: sofocused/my-activities-api:1.0.1
+    image: sofocused/my-activities-api:1.0.2
     restart: unless-stopped
     depends_on:
       - my-activities-database

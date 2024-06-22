@@ -8,7 +8,6 @@ View the site at [https://myactivitiesapp.azurewebsites.net/](https://myactiviti
 
 View the backend at [https://github.com/JonathanD01/my-activities-api](https://github.com/JonathanD01/my-activities-api)
 
-
 ## Features
 - Display your upcoming activities
 - Update your activities

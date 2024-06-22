@@ -21,4 +21,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/my-activities-frontend:1.0.1
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/my-activities-frontend:1.0.2
